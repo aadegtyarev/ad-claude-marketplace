@@ -1,0 +1,28 @@
+name: Plugin version check
+
+# Guards the marketplace's update mechanism: if a PR edits a plugin's content
+# but forgets to bump its plugin.json "version", already-installed copies never
+# update. This job fails such PRs with an explicit, actionable message.
+#
+# Runs on every PR (no `paths:` filter) so it stays safe to mark as a required
+# status check — a path-filtered required check that gets skipped blocks the PR
+# forever. The script exits 0 immediately when no plugin content changed.
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  version-bump:
+    name: Version bump on changed plugins
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history for base diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check plugin version bumps
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python3 .github/scripts/check_plugin_versions.py
