@@ -161,3 +161,4 @@ and how to validate: `references/diagrams.md`.
 - Diátaxis: <https://diataxis.fr/>
 - Plain-language principles: <https://www.archives.gov/open/plain-writing/10-principles.html>
 - Mermaid: <https://mermaid.js.org/intro/>
+
