@@ -1,0 +1,9 @@
+{
+  "name": "repo-docs",
+  "description": "Write, rewrite and review the documentation that lives in a repository — README, docs/, guides and onboarding shipped next to the code. Splits pages by reader task (Diátaxis), strips machine-prose tells, adds Mermaid diagrams that show mechanism, and mechanically verifies links, anchors and diagrams via check_docs.py.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Alexander Degtyarev"
+  },
+  "license": "MIT"
+}

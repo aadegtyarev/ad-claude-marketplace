@@ -1,0 +1,10 @@
+{
+  "name": "ad",
+  "owner": {
+    "name": "Alexander Degtyarev"
+  },
+  "description": "Personal marketplace of Claude Code plugins — skills, utilities and MCP servers, independent of any single project.",
+  "plugins": [
+    { "name": "repo-docs", "source": "./plugins/repo-docs" }
+  ]
+}
